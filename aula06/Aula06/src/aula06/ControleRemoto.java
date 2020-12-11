@@ -1,5 +1,6 @@
 package aula06;
-public class ControleRemoto implements Controlador{
+
+public class ControleRemoto implements Controlador {
     // Atributos
     private int volume;
     private boolean ligado;
@@ -35,6 +36,7 @@ public class ControleRemoto implements Controlador{
     private void setTocando(boolean tocando) {
         this.tocando = tocando;
     }
+
     // Métodos Abstratos
     @Override
     public void ligar() {
@@ -52,7 +54,7 @@ public class ControleRemoto implements Controlador{
         System.out.println("Está ligado? " + this.isLigado());
         System.out.println("Está tocando? " + this.isTocando());
         System.out.print("Volume: " + this.getVolume());
-        for(int i = 0; i <= this.getVolume(); i+=10) {
+        for (int i = 0; i <= this.getVolume(); i += 10) {
             System.out.print("|");
         }
         System.out.println("");
@@ -65,7 +67,7 @@ public class ControleRemoto implements Controlador{
 
     @Override
     public void maisVolume() {
-        if(this.isLigado()) {
+        if (this.isLigado()) {
             this.setVolume(this.getVolume() + 5);
         } else {
             System.out.println("Impossível aumentar volume");
@@ -74,7 +76,7 @@ public class ControleRemoto implements Controlador{
 
     @Override
     public void menosMenu() {
-        if(this.isLigado()) {
+        if (this.isLigado()) {
             this.setVolume(this.getVolume() - 5);
         } else {
             System.out.println("Impossível diminuir volume");
@@ -83,21 +85,21 @@ public class ControleRemoto implements Controlador{
 
     @Override
     public void ligarMudo() {
-        if(this.isLigado() && this.getVolume() > 0) {
+        if (this.isLigado() && this.getVolume() > 0) {
             this.setVolume(0);
         }
     }
 
     @Override
     public void desligarMudo() {
-        if(this.isLigado() && this.getVolume() == 0) {
+        if (this.isLigado() && this.getVolume() == 0) {
             this.setVolume(50);
         }
     }
 
     @Override
     public void play() {
-        if(this.isLigado() && !(this.isTocando())) {
+        if (this.isLigado() && !(this.isTocando())) {
             this.setTocando(true);
         } else {
             System.out.println("Não consegui reproduzir");
@@ -106,11 +108,11 @@ public class ControleRemoto implements Controlador{
 
     @Override
     public void pause() {
-        if(this.isLigado() && this.isTocando()) {
+        if (this.isLigado() && this.isTocando()) {
             this.setTocando(false);
         } else {
             System.out.println("Não consegui pausar");
         }
     }
-    
+
 }

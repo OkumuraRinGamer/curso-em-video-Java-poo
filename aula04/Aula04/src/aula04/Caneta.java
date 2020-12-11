@@ -1,4 +1,5 @@
 package aula04;
+
 public class Caneta {
     private String modelo;
     private float ponta;
@@ -43,5 +44,5 @@ public class Caneta {
     public void setTampada(boolean tampada) {
         this.tampada = tampada;
     }
- 
+
 }
