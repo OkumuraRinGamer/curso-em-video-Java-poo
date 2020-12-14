@@ -37,7 +37,7 @@ public class Aula05 {
             c1.setNumConta(numConta);
             System.out.println("Sua conta foi criada com sucesso! estes são os dados:");
             c1.estadoAtual();
-            while("S".equals(continuar)) {
+            while ("S".equals(continuar)) {
                 System.out.println("O que gostaria de fazer? ");
                 System.out.println("1 - Depositar.");
                 System.out.println("2 - Sacar.");
@@ -46,7 +46,7 @@ public class Aula05 {
                 System.out.println("5 - Estado da conta.");
                 System.out.println("6 - Sair.");
                 escolha = teclado.nextInt();
-                switch(escolha){
+                switch (escolha) {
                     case 1:
                         System.out.print("Digite o valor a ser depositado: ");
                         depositar = teclado.nextFloat();
